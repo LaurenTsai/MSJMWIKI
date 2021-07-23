@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       key: _scaffoldKey,
       drawer: NavDrawer(),
       appBar: AppBar(
-        title: Text('MSJM WIKI'),
+        title: Text('MSJM WIKIS'),
         backgroundColor: Colors.blue,
         centerTitle: true,
         leading: IconButton(
