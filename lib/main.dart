@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MSJM WIKI',
+      title: 'MSJM WIKIS',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       key: _scaffoldKey,
       drawer: NavDrawer(),
       appBar: AppBar(
-        title: Text('MSJM WIKIS'),
+        title: Text('MSJM WIKI'),
         backgroundColor: Colors.blue,
         centerTitle: true,
         leading: IconButton(
