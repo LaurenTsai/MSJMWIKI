@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playingaround/Planets/planets.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -30,28 +31,35 @@ class NavDrawer extends StatelessWidget {
           ),
 
           ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
-            onTap: () => {},
+            leading: Icon(Icons.place_sharp),
+            title: Text('Planets'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Planetss(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
+            title: Text('Stars'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: Icon(Icons.star),
+            title: Text('Galaxies'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
+            leading: Icon(Icons.map),
+            title: Text('Moon'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
+            title: Text('Nebulae'),
             onTap: () => {Navigator.of(context).pop()},
           ),
         ],

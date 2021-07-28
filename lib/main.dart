@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MSJM WIKIS',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.black87,
         primarySwatch: Colors.blue,
       ),
       home: Planetss(),

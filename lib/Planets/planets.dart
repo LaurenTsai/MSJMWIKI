@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:playingaround/Planets/planetsAPI.dart';
+import 'package:playingaround/Planets/planetscard.dart';
 import 'package:playingaround/Stars/Stars.dart';
 import 'package:playingaround/widgets/Drawer.dart';
+
+import '../ReadView.dart';
 
 class Planetss extends StatefulWidget {
   @override
@@ -35,149 +39,174 @@ class _PlanetssState extends State<Planetss> {
             )
           ],
         ),
-        body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                  height: 100,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.all(8),
-                        child: InkWell(
-                          onTap: () {}, // Handle your callback
-                          child: Container(
-                              height: 80,
-                              width: 140.0,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Planets2013.svg/260px-Planets2013.svg.png"),
-                                    fit: BoxFit.fill,
-                                  )
-                              ),
-                              child: Center(
-                                  child: Text('Planets',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16
+        body: ListView(
+                children: [
+                  Container(
+                      height: 100,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.all(8),
+                            child: InkWell(
+                              onTap: () {}, // Handle your callback
+                              child: Container(
+                                  height: 80,
+                                  width: 140.0,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Planets2013.svg/260px-Planets2013.svg.png"),
+                                        fit: BoxFit.fill,
+                                      )
+                                  ),
+                                  child: Center(
+                                      child: Text('Planets',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16
+                                          )
                                       )
                                   )
-                              )
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8),
-                        child: InkWell(
-                          onTap: () => Navigator.push(
+                          Padding(
+                            padding: EdgeInsets.all(8),
+                            child: InkWell(
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Starss(),
+                                ),
+                              ), // Handle your callback
+                              child: Container(
+                                  height: 80,
+                                  width: 140.0,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Starsinthesky.jpg/228px-Starsinthesky.jpg"),
+                                        fit: BoxFit.fill,
+                                      )
+                                  ),
+                                  child: Center(
+                                      child: Text('Stars',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16
+                                          )
+                                      )
+                                  )
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(8),
+                            child: InkWell(
+                              onTap: () {}, // Handle your callback
+                              child: Container(
+                                  height: 80,
+                                  width: 140.0,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/220px-Andromeda_Galaxy_560mm_FL.jpg"),
+                                        fit: BoxFit.fill,
+                                      )
+                                  ),
+                                  child: Center(
+                                      child: Text('Galaxies',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16
+                                          )
+                                      )
+                                  )
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(8),
+                            child: InkWell(
+                              onTap: () {}, // Handle your callback
+                              child: Container(
+                                  height: 80,
+                                  width: 140.0,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/100px-FullMoon2010.jpg"),
+                                        fit: BoxFit.cover,
+                                      )
+                                  ),
+                                  child: Center(
+                                      child: Text('Moon',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16
+                                          )
+                                      )
+                                  )
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(8),
+                            child: InkWell(
+                              onTap: () {}, // Handle your callback
+                              child: Container(
+                                  height: 80,
+                                  width: 140.0,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage("https://spaceplace.nasa.gov/nebula/en/nebula1.en.jpg"),
+                                        fit: BoxFit.cover,
+                                      )
+                                  ),
+                                  child: Center(
+                                      child: Text('Nebulae',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16
+                                          )
+                                      )
+                                  )
+                              ),
+                            ),
+                          ),
+                        ],
+                      )),
+                  SizedBox(height: 10),
+                  Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Planets2013.svg/260px-Planets2013.svg.png',
+                    fit: BoxFit.cover,
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                  ),
+                  ListView.builder(
+                    itemCount: recentList.length,
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    physics: BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      var recent = recentList[index];
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Starss(),
+                              builder: (context) => ReadView(planets: recent),
                             ),
-                          ), // Handle your callback
-                          child: Container(
-                              height: 80,
-                              width: 140.0,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Starsinthesky.jpg/228px-Starsinthesky.jpg"),
-                                    fit: BoxFit.fill,
-                                  )
-                              ),
-                              child: Center(
-                                  child: Text('Stars',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16
-                                      )
-                                  )
-                              )
-                          ),
+                          );
+                        },
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
+                          child: PlanetsCard(planets: recent),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8),
-                        child: InkWell(
-                          onTap: () {}, // Handle your callback
-                          child: Container(
-                              height: 80,
-                              width: 140.0,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/220px-Andromeda_Galaxy_560mm_FL.jpg"),
-                                    fit: BoxFit.fill,
-                                  )
-                              ),
-                              child: Center(
-                                  child: Text('Galaxies',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16
-                                      )
-                                  )
-                              )
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8),
-                        child: InkWell(
-                          onTap: () {}, // Handle your callback
-                          child: Container(
-                              height: 80,
-                              width: 140.0,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/100px-FullMoon2010.jpg"),
-                                    fit: BoxFit.cover,
-                                  )
-                              ),
-                              child: Center(
-                                  child: Text('Moon',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16
-                                      )
-                                  )
-                              )
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8),
-                        child: InkWell(
-                          onTap: () {}, // Handle your callback
-                          child: Container(
-                              height: 80,
-                              width: 140.0,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage("https://spaceplace.nasa.gov/nebula/en/nebula1.en.jpg"),
-                                    fit: BoxFit.cover,
-                                  )
-                              ),
-                              child: Center(
-                                  child: Text('Nebulae',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16
-                                      )
-                                  )
-                              )
-                          ),
-                        ),
-                      ),
-                    ],
-                  )),
-              SizedBox(height: 10),
-              Image.network(
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Planets2013.svg/260px-Planets2013.svg.png',
-                fit: BoxFit.cover,
-                height: 150,
-                width: MediaQuery.of(context).size.width,
-              ),
-            ]));
+                      );
+                    },
+                  ),
+                  SizedBox(height: 20),
+                ],
+              )
+
+        );
   }
 }
