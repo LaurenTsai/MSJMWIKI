@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:playingaround/Planets/planets.dart';
+import 'package:playingaround/Planets/planetsAPI.dart';
 import 'package:playingaround/widgets/Drawer.dart';
 
 void main() {
@@ -15,54 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: Planetss(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
 
-class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      drawer: NavDrawer(),
-      appBar: AppBar(
-        title: Text('MSJM WIKI'),
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-        leading: IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: Colors.white,
-            ),
-          onPressed: () => _scaffoldKey.currentState.openDrawer(),
-            ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.settings,
-              color: Colors.white,
-            ),
-            onPressed: () => _scaffoldKey.currentState.openDrawer(),
-          )
-        ],
-      ),
-      body: Center(
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-
-          ],
-        ),
-      ),
-    );
-  }
-}
