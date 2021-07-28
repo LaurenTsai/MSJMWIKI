@@ -136,7 +136,7 @@ List<Planets> recentList = [
 
       time: "4 hours ago",
       title:
-      "Neptune",
+      "Neptunes",
       image:
       "https://image.flaticon.com/icons/png/512/3594/3594089.png",
       subtitle:
