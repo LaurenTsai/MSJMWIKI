@@ -15,10 +15,17 @@ class PlanetsCard extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 45, top: 15),
           child: Container(
-              padding: EdgeInsets.only(left: 60, top: 10),
-              height: 130,
+              decoration: BoxDecoration(
+                color: color1,
+                  border: Border.all(
+                    color: color1,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20))
+              ),
+              padding: EdgeInsets.only(left: 50, top: 10),
+              height: 150,
               width: 300,
-              color: color1,
+              /*color: color1,*/
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,13 +37,28 @@ class PlanetsCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 20.0),
                   ),
+                  SizedBox(height: 3),
                   Text(
-                    planets.title,
+                    planets.subtitle,
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.0),
+                        fontSize: 13.0),
                   ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.map_outlined,
+                        color: Colors.white,
+                        size: 20.0,
+                      ),
+                      SizedBox(width: 10),
+                      Text(planets.size,
+                      style: TextStyle(color: Colors.white)
+                      )
+                    ],
+                  )
                 ],
               )),
         ),

@@ -20,7 +20,7 @@ class _PlanetssState extends State<Planetss> {
         drawer: NavDrawer(),
         appBar: AppBar(
           title: Text('MSJM WIKI'),
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.black,
           centerTitle: true,
           leading: IconButton(
             icon: Icon(
